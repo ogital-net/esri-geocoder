@@ -1,0 +1,29 @@
+{
+  "suggestions": [
+    {
+      "text": "New York, NY, USA",
+      "magicKey": "dHA9MCNsb2M9MCNsbmc9MzMjcGw9MzMjbGJzPTAA",
+      "isCollection": false
+    },
+    {
+      "text": "New York Mills, MN, USA",
+      "magicKey": "dHA9MCNsb2M9MCNsbmc9MzMjcGw9MzMjbGJzPTAB",
+      "isCollection": false
+    },
+    {
+      "text": "New York Ave NW, Washington, DC, USA",
+      "magicKey": "dHA9MCNsb2M9MCNsbmc9MzMjcGw9MzMjbGJzPTAC",
+      "isCollection": false
+    },
+    {
+      "text": "New York City Hall, New York, NY, USA",
+      "magicKey": "dHA9MCNsb2M9MCNsbmc9MzMjcGw9MzMjbGJzPTAD",
+      "isCollection": false
+    },
+    {
+      "text": "Coffee Shop",
+      "magicKey": "dHA9MCNsb2M9MCNsbmc9MzMjcGw9MzMjbGJzPTAE",
+      "isCollection": true
+    }
+  ]
+}

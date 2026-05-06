@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: "-D warnings"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  fmt:
+    name: cargo fmt
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - run: cargo fmt --all --check
+
+  test:
+    name: test (${{ matrix.os }} / ${{ matrix.backend }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2022]
+        backend: [serde_json]
+        include:
+          # Alternate JSON backends on Linux and macOS only; sonic-rs and
+          # simd-json don't build on Windows.
+          - os: ubuntu-24.04
+            backend: sonic-rs
+          - os: ubuntu-24.04
+            backend: simd-json
+          - os: macos-15
+            backend: sonic-rs
+          - os: macos-15
+            backend: simd-json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - name: cargo test
+        run: |
+          if [ "${{ matrix.backend }}" = "serde_json" ]; then
+            cargo test
+          else
+            cargo test --no-default-features --features ${{ matrix.backend }}
+          fi
+
+  clippy:
+    name: clippy (${{ matrix.os }} / ${{ matrix.backend }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2022]
+        backend: [serde_json]
+        include:
+          - os: ubuntu-24.04
+            backend: sonic-rs
+          - os: ubuntu-24.04
+            backend: simd-json
+          - os: macos-15
+            backend: sonic-rs
+          - os: macos-15
+            backend: simd-json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: cargo clippy
+        run: |
+          if [ "${{ matrix.backend }}" = "serde_json" ]; then
+            cargo clippy --all-targets -- -D warnings -W clippy::pedantic
+          else
+            cargo clippy --all-targets --no-default-features --features ${{ matrix.backend }} -- -D warnings -W clippy::pedantic
+          fi
+
+  msrv:
+    name: MSRV 1.86 (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2022]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.86.0
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo build

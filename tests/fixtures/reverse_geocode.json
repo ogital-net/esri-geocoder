@@ -1,0 +1,28 @@
+{
+  "address": {
+    "AddNum": "1600",
+    "Street": "Pennsylvania Ave NW",
+    "Neighborhood": "Foggy Bottom",
+    "City": "Washington",
+    "Subregion": "District of Columbia",
+    "Region": "District of Columbia",
+    "RegionAbbr": "DC",
+    "Postal": "20500",
+    "PostalExt": "",
+    "CountryCode": "USA",
+    "Addr_type": "PointAddress",
+    "Type": "",
+    "PlaceName": "",
+    "Match_addr": "1600 Pennsylvania Ave NW, Washington, DC, 20500",
+    "LongLabel": "1600 Pennsylvania Ave NW, Washington, DC, 20500, USA",
+    "ShortLabel": "1600 Pennsylvania Ave NW"
+  },
+  "location": {
+    "x": -77.03655,
+    "y": 38.89767,
+    "spatialReference": {
+      "wkid": 4326,
+      "latestWkid": 4326
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "spatialReference": {
+    "wkid": 4326,
+    "latestWkid": 4326
+  },
+  "locations": [
+    {
+      "address": "380 New York St, Redlands, CA 92373",
+      "location": {
+        "x": -117.19555,
+        "y": 34.05609
+      },
+      "score": 100,
+      "attributes": {
+        "ResultID": 1,
+        "Loc_name": "World",
+        "Status": "M",
+        "Score": 100,
+        "Match_addr": "380 New York St, Redlands, California, 92373",
+        "LongLabel": "380 New York St, Redlands, CA, 92373, USA",
+        "ShortLabel": "380 New York St",
+        "Addr_type": "PointAddress",
+        "Type": "",
+        "PlaceName": "",
+        "Place_addr": "380 New York St, Redlands, CA, 92373",
+        "AddNum": "380",
+        "StName": "New York",
+        "StType": "St",
+        "City": "Redlands",
+        "Region": "California",
+        "RegionAbbr": "CA",
+        "Postal": "92373",
+        "Country": "USA",
+        "X": -117.19555,
+        "Y": 34.05609
+      },
+      "resultId": 1
+    },
+    {
+      "address": "1 World Way, Los Angeles, CA 90045",
+      "location": {
+        "x": -118.40823,
+        "y": 33.94256
+      },
+      "score": 98.5,
+      "attributes": {
+        "ResultID": 2,
+        "Loc_name": "World",
+        "Status": "M",
+        "Score": 98,
+        "Match_addr": "1 World Way, Los Angeles, California, 90045",
+        "LongLabel": "1 World Way, Los Angeles, CA, 90045, USA",
+        "ShortLabel": "1 World Way",
+        "Addr_type": "PointAddress",
+        "Type": "",
+        "PlaceName": "",
+        "Place_addr": "1 World Way, Los Angeles, CA, 90045",
+        "AddNum": "1",
+        "StName": "World",
+        "StType": "Way",
+        "City": "Los Angeles",
+        "Region": "California",
+        "RegionAbbr": "CA",
+        "Postal": "90045",
+        "Country": "USA",
+        "X": -118.40823,
+        "Y": 33.94256
+      },
+      "resultId": 2
+    },
+    {
+      "address": "",
+      "location": null,
+      "score": 0,
+      "attributes": {
+        "ResultID": 3,
+        "Loc_name": "",
+        "Status": "U",
+        "Score": 0,
+        "Match_addr": "",
+        "LongLabel": "",
+        "ShortLabel": "",
+        "Addr_type": "",
+        "Type": "",
+        "PlaceName": "",
+        "Place_addr": ""
+      },
+      "resultId": 3
+    }
+  ]
+}
